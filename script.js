@@ -9,20 +9,29 @@ btn.onclick = function() {
   }
 };
 function moveButton() {
-    // Get the button element
-    var button = document.querySelector('.nobtn');
-  
-    // Get the width and height of the viewport
-    var viewportWidth = window.innerWidth;
-    var viewportHeight = window.innerHeight;
-  
-    // Calculate a random position for the button
-    var randomX = Math.floor(Math.random() * (viewportWidth - button.offsetWidth));
-    var randomY = Math.floor(Math.random() * (viewportHeight - button.offsetHeight));
-  
-    // Set the new position for the button
-    button.style.left = randomX + 'px';
-    button.style.top = randomY + 'px';
-  }
+  // Get the button element
+  var button = document.querySelector('.nobtn');
+
+  // Get the width and height of the viewport
+  var viewportWidth = window.innerWidth;
+  var viewportHeight = window.innerHeight;
+
+  // Get the scroll position
+  var scrollX = window.scrollX || window.pageXOffset;
+  var scrollY = window.scrollY || window.pageYOffset;
+
+  // Calculate a random position for the button
+  var randomX = Math.floor(Math.random() * (viewportWidth - button.offsetWidth));
+  var randomY = Math.floor(Math.random() * (viewportHeight - button.offsetHeight));
+
+  // Adjust position based on scroll
+  randomX += scrollX;
+  randomY += scrollY;
+
+  // Set the new position for the button
+  button.style.left = randomX + 'px';
+  button.style.top = randomY + 'px';
+}
+
 
   

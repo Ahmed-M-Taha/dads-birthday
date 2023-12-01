@@ -39,14 +39,33 @@ footer {
     margin-top: 20px;
     color: #777;
 }
-.b1{
+
+.b1 {
     height: 2em;
-    width: 20em;
-    font-size: xx-large!important;
+    width: 100%; /* Adjusted width for mobile */
+    font-size: large !important; /* Adjusted font size for mobile */
 }
-.content{
+
+.content {
     display: none;
 }
-.nobtn{
+
+.nobtn {
     position: absolute;
+}
+
+@media (max-width: 600px) {
+    /* Adjustments for small screens */
+    .container {
+        margin: 20px auto;
+    }
+
+    .b1 {
+        width: 100%;
+    }
+
+    .nobtn {
+        position: absolute;
+        margin-top: 20px;
+    }
 }
